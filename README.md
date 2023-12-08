@@ -1,15 +1,19 @@
-# Scarpet for Kate
-### Full Syntax Highlighting for KSyntaxHighlighing (Kate)
+# Scarpet for Kate (KSyntaxHighlighting)
 
-Full syntax highlighting support for Scarpet in [Kate (KDE)](https://kate-editor.org/).
-
-Scarpet is a scripting language for Minecraft supported by [Carpet Mod](https://github.com/gnembon/fabric-carpet).
+Full Syntax Highlighting support for Scarpet in [Kate](https://kate-editor.org/) through KSyntaxHighlighting.
 
 Kate is an open source, cross platform, versatile text editor made by KDE.
 
+Scarpet is a scripting language for Minecraft supported by Gnembon's [Carpet Mod](https://github.com/gnembon/fabric-carpet).
+
+## Screenshots
+
+![Github Dark Theme Screenshot](./screenshot/github_dark.png "Github Dark Theme Screenshot")
+
+![Monokai Theme Screenshot](./screenshot/monokai.png "Monokai Theme Screenshot")
+
 ## Installation
-To install the syntax highlighting support file, download [`scarpet.xml`](./scarpet.xml) and move it to one of the following folders,
-depending on your platform (or how Kate was installed).
+Download or move [`scarpet.xml`](./scarpet.xml) to one of the following folders, depending on the platform (or how Kate was installed).
 
 You may need to create the directories if they are not present.
 
