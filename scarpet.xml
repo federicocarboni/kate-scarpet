@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language [
+    <!ENTITY globalvar "global_[a-zA-Z0-9_]+">
+    <!ENTITY identifier "_*[a-zA-Z][a-zA-Z0-9_]*">
+]>
+<!--
+    Author: Federico Carboni
+    Repository: https://github.com/FedericoCarboni/kate-scarpet
+
+    Full Scarpet syntax highlighting for KSyntaxHighlighting.
+
+    Last Update: 08 Dec. 2023 (Version 1)
+-->
+<language name="Scarpet" version="1" kateversion="2.4" section="Scripts" extensions="*.sc;*.scl" author="Federico Carboni">
+    <highlighting>
+        <list name="controlflow">
+            <item>if</item>
+            <item>loop</item>
+            <item>c_for</item>
+            <item>for</item>
+            <item>while</item>
+            <item>continue</item>
+            <item>break</item>
+            <item>return</item>
+            <item>exit</item>
+            <item>throw</item>
+            <item>try</item>
+        </list>
+        <list name="keywords">
+            <item>sum</item>
+            <item>difference</item>
+            <item>product</item>
+            <item>quotient</item>
+
+            <item>equal</item>
+            <item>unique</item>
+            <item>increasing</item>
+            <item>decreasing</item>
+            <item>nondecreasing</item>
+            <item>nonincreasing</item>
+
+            <item>and</item>
+            <item>or</item>
+
+            <item>bitwise_and</item>
+            <item>bitwise_xor</item>
+            <item>bitwise_or</item>
+            <item>bitwise_shift_left</item>
+            <item>bitwise_shift_right</item>
+            <item>bitwise_arithmetic_shift_right</item>
+            <item>bitwise_roll_left</item>
+            <item>bitwise_roll_right</item>
+            <item>bitwise_not</item>
+            <item>bitwise_popcount</item>
+            <item>double_to_long_bits</item>
+            <item>long_to_double_bits</item>
+
+            <item>m</item>
+            <item>l</item>
+
+            <item>call</item>
+            <item>then</item>
+            <item>outer</item>
+
+            <item>var</item>
+            <item>vars</item>
+            <item>undef</item>
+        </list>
+        <list name="import">
+            <item>import</item>
+        </list>
+        <list name="constants">
+            <item>null</item>
+            <item>true</item>
+            <item>false</item>
+            <item>pi</item>
+            <item>euler</item>
+        </list>
+        <list name="pseudo_variables">
+            <item>_</item>
+            <item>_i</item>
+            <item>_a</item>
+            <item>_x</item>
+            <item>_y</item>
+            <item>_z</item>
+            <item>_trace</item>
+        </list>
+        <list name="builtins">
+            <item>fact</item>
+            <item>sqrt</item>
+            <item>abs</item>
+            <item>round</item>
+            <item>floor</item>
+            <item>ceil</item>
+            <item>ln</item>
+            <item>ln1p</item>
+            <item>log10</item>
+            <item>log</item>
+            <item>log1p</item>
+            <item>mandelbrot</item>
+            <item>min</item>
+            <item>max</item>
+            <item>relu</item>
+
+            <item>sin</item>
+            <item>cos</item>
+            <item>tan</item>
+            <item>asin</item>
+            <item>acos</item>
+            <item>atan</item>
+            <item>atan2</item>
+            <item>sinh</item>
+            <item>cosh</item>
+            <item>tanh</item>
+            <item>sec</item>
+            <item>csc</item>
+            <item>sech</item>
+            <item>csch</item>
+            <item>cot</item>
+            <item>acot</item>
+            <item>coth</item>
+            <item>asinh</item>
+            <item>acosh</item>
+            <item>atanh</item>
+            <item>rad</item>
+            <item>deg</item>
+
+            <item>copy</item>
+            <item>type</item>
+            <item>bool</item>
+            <item>number</item>
+            <item>str</item>
+
+            <item>task</item>
+            <item>task_thread</item>
+            <item>sleep</item>
+            <item>task_count</item>
+            <item>task_value</item>
+            <item>task_join</item>
+            <item>task_completed</item>
+            <item>synchronize</item>
+            <item>task_dock</item>
+
+            <item>lower</item>
+            <item>upper</item>
+            <item>title</item>
+            <item>replace</item>
+            <item>replace_first</item>
+            <item>length</item>
+            <item>rand</item>
+            <item>reset_seed</item>
+            <item>perlin</item>
+            <item>simplex</item>
+            <item>time</item>
+            <item>unix_time</item>
+            <item>convert_date</item>
+            <item>encode_b64</item>
+            <item>decode_b64</item>
+            <item>encode_json</item>
+            <item>decode_json</item>
+            <item>profile_expr</item>
+
+            <item>system_variable_get</item>
+            <item>system_variable_set</item>
+
+            <item>map</item>
+            <item>filter</item>
+            <item>first</item>
+            <item>all</item>
+            <item>reduce</item>
+
+            <item>get</item>
+            <item>has</item>
+            <item>delete</item>
+            <item>put</item>
+
+            <item>join</item>
+            <item>split</item>
+            <item>slice</item>
+            <item>sort</item>
+            <item>sort_key</item>
+            <item>range</item>
+
+            <item>keys</item>
+            <item>values</item>
+            <item>pairs</item>
+        </list>
+        <list name="minecraft_builtins">
+            <item>scan</item>
+            <item>volume</item>
+            <item>neighbours</item>
+            <item>rect</item>
+            <item>diamond</item>
+
+            <item>block</item>
+            <item>set</item>
+            <item>without_updates</item>
+            <item>place_item</item>
+            <item>set_poi</item>
+            <item>set_biome</item>
+            <item>update</item>
+            <item>block_tick</item>
+            <item>random_tick</item>
+            <item>destroy</item>
+            <item>harvest</item>
+            <item>create_explosion</item>
+            <item>weather</item>
+
+            <item>pos</item>
+            <item>pos_offset</item>
+            <item>block_state</item>
+            <item>block_list</item>
+            <item>block_tags</item>
+            <item>block_data</item>
+            <item>poi</item>
+            <item>biome</item>
+            <item>solid</item>
+            <item>air</item>
+            <item>liquid</item>
+            <item>flammable</item>
+            <item>transparent</item>
+            <item>opacity</item>
+            <item>blocks_daylight</item>
+            <item>emitted_light</item>
+            <item>light</item>
+            <item>block_light</item>
+            <item>sky_light</item>
+            <item>effective_light</item>
+            <item>see_sky</item>
+            <item>hardness</item>
+            <item>blast_resistance</item>
+            <item>in_slime_chunk</item>
+            <item>top</item>
+            <item>suffocates</item>
+            <item>power</item>
+            <item>ticks_randomly</item>
+            <item>blocks_movement</item>
+            <item>block_sound</item>
+            <item>map_colour</item>
+            <item>sample_noise</item>
+            <item>loaded</item>
+            <item>loaded_status</item>
+            <item>is_chunk_generated</item>
+            <item>generation_status</item>
+            <item>inhabited_time</item>
+            <item>spawn_potential</item>
+            <item>reload_chunk</item>
+            <item>reset_chunk</item>
+            <item>add_chunk_ticket</item>
+
+            <item>structure_eligibility</item>
+            <item>structures</item>
+            <item>structure_references</item>
+            <item>set_structure</item>
+            <item>plop</item>
+
+            <item>player</item>
+            <item>entity_id</item>
+            <item>entity_list</item>
+            <item>entity_types</item>
+            <item>entity_area</item>
+            <item>entity_selector</item>
+            <item>spawn</item>
+            <item>query</item>
+            <item>modify</item>
+            <item>entity_load_handler</item>
+            <item>entity_event</item>
+
+            <item>handle_event</item>
+            <item>signal_event</item>
+
+            <item>item_list</item>
+            <item>item_tags</item>
+            <item>stack_limit</item>
+            <item>recipe_data</item>
+            <item>crafting_remaining_item</item>
+            <item>inventory_size</item>
+            <item>inventory_has_items</item>
+            <item>inventory_get</item>
+            <item>inventory_set</item>
+            <item>inventory_find</item>
+            <item>inventory_remove</item>
+            <item>drop_item</item>
+            <item>create_screen</item>
+            <item>close_screen</item>
+            <item>screen_property</item>
+
+            <item>scoreboard</item>
+            <item>scoreboard_add</item>
+            <item>scoreboard_remove</item>
+            <item>scoreboard_display</item>
+            <item>scoreboard_property</item>
+
+            <item>team_list</item>
+            <item>team_add</item>
+            <item>team_remove</item>
+            <item>team_leave</item>
+            <item>team_property</item>
+
+            <item>bossbar</item>
+
+            <item>sound</item>
+            <item>particle</item>
+            <item>particle_line</item>
+            <item>particle_box</item>
+            <item>draw_shape</item>
+            <item>create_marker</item>
+            <item>remove_all_markers</item>
+            <item>nbt</item>
+            <item>escape_nbt</item>
+            <item>tag_matches</item>
+            <item>parse_nbt</item>
+            <item>encode_nbt</item>
+
+            <item>print</item>
+            <item>format</item>
+            <item>item_display_name</item>
+            <item>display_title</item>
+            <item>logger</item>
+            <item>read_file</item>
+            <item>delete_file</item>
+            <item>write_file</item>
+            <item>list_files</item>
+
+            <item>run</item>
+            <item>save</item>
+            <item>load_app_data</item>
+            <item>store_app_data</item>
+            <item>create_datapack</item>
+            <item>tick_time</item>
+            <item>day_time</item>
+            <item>game_tick</item>
+            <item>current_dimension</item>
+            <item>in_dimension</item>
+            <item>get_mob_counts</item>
+            <item>schedule</item>
+            <item>statistic</item>
+            <item>system_info</item>
+            <item>nbt_storage</item>
+
+            <item>__config</item>
+            <item>__command</item>
+        </list>
+        <list name="deprecated_builtins">
+            <item>block_properties</item>
+            <item>property</item>
+            <item>material</item>
+            <item>loaded_ep</item>
+            <item>particle_rect</item>
+
+            <item>world_time</item>
+            <item>last_tick_times</item>
+            <item>seed</item>
+            <item>view_distance</item>
+        </list>
+        <list name="events">
+            <item>__on_start</item>
+            <item>__on_close</item>
+
+            <item>__on_server_starts</item>
+            <item>__on_server_shuts_down</item>
+            <item>__on_tick</item>
+            <item>__on_chunk_generated</item>
+            <item>__on_chunk_loaded</item>
+            <item>__on_chunk_unloaded</item>
+            <item>__on_lighting</item>
+            <item>__on_explosion</item>
+            <item>__on_explosion_outcome</item>
+            <item>__on_carpet_rule_changes</item>
+
+            <item>__on_player_uses_item</item>
+            <item>__on_player_releases_item</item>
+            <item>__on_player_finishes_using_item</item>
+            <item>__on_player_clicks_block</item>
+            <item>__on_player_breaks_block</item>
+            <item>__on_player_right_clicks_block</item>
+            <item>__on_player_interacts_with_block</item>
+            <item>__on_player_placing_block</item>
+            <item>__on_player_places_block</item>
+            <item>__on_player_interacts_with_entity</item>
+            <item>__on_player_trades</item>
+            <item>__on_player_collides_with_entity</item>
+            <item>__on_player_chooses_recipe</item>
+            <item>__on_player_switches_slot</item>
+            <item>__on_player_swaps_hands</item>
+            <item>__on_player_swings_hand</item>
+            <item>__on_player_attacks_entity</item>
+            <item>__on_player_takes_damage</item>
+            <item>__on_player_deals_damage</item>
+            <item>__on_player_dies</item>
+            <item>__on_player_respawns</item>
+            <item>__on_player_changes_dimension</item>
+            <item>__on_player_rides</item>
+            <item>__on_player_jumps</item>
+            <item>__on_player_deploys_elytra</item>
+            <item>__on_player_wakes_up</item>
+            <item>__on_player_escapes_sleep</item>
+            <item>__on_player_starts_sneaking</item>
+            <item>__on_player_stops_sneaking</item>
+            <item>__on_player_starts_sprinting</item>
+            <item>__on_player_stops_sprinting</item>
+            <item>__on_player_drops_item</item>
+            <item>__on_player_drops_stack</item>
+            <item>__on_player_picks_up_item</item>
+            <item>__on_player_connects</item>
+            <item>__on_player_disconnects</item>
+            <item>__on_player_message</item>
+            <item>__on_player_command</item>
+            <item>__on_statistic</item>
+        </list>
+        <list name="deprecated_events">
+            <item>__on_tick_nether</item>
+            <item>__on_tick_ender</item>
+        </list>
+        <contexts>
+            <!-- Syntax of Scarpet -->
+            <context attribute="Normal Text" lineEndContext="#stay" name="Normal">
+                <!-- Code folding -->
+                <DetectChar attribute="Normal Text" char="[" context="List" beginRegion="List"/>
+                <DetectChar attribute="Normal Text" char="{" context="Map" beginRegion="Map"/>
+                <DetectChar attribute="Normal Text" char="(" context="Block" beginRegion="Block"/>
+                <!-- Main syntax -->
+                <IncludeRules context="FindComments" />
+                <IncludeRules context="FindOperators" />
+                <IncludeRules context="FindKeywords" />
+                <IncludeRules context="FindFunctions" />
+                <IncludeRules context="FindStrings" />
+                <IncludeRules context="FindNumbers" />
+                <IncludeRules context="FindGlobals" />
+            </context>
+
+            <!-- FindComments -->
+            <context attribute="Normal Text" lineEndContext="#stay" name="FindComments">
+                <Detect2Chars attribute="Comment" context="MatchComment" char="/" char1="/" lookAhead="true" />
+            </context>
+            <context name="MatchComment" attribute="Normal Text" lineEndContext="#pop" fallthrough="true" fallthroughContext="#pop">
+                <Detect2Chars attribute="Comment" context="#pop!Comment" char="/" char1="/" />
+            </context>
+            <context name="Comment" attribute="Comment" lineEndContext="#pop">
+                <DetectSpaces />
+                <IncludeRules context="##Comments" />
+            </context>
+
+            <!-- FindOperators -->
+            <context attribute="Normal Text" lineEndContext="#stay" name="FindOperators">
+                <StringDetect attribute="Operator" String="..." />
+                <Detect2Chars attribute="Operator" char="&gt;" char1="=" />
+                <Detect2Chars attribute="Operator" char="&lt;" char1="=" />
+                <Detect2Chars attribute="Operator" char="=" char1="=" />
+                <Detect2Chars attribute="Operator" char="!" char1="=" />
+                <Detect2Chars attribute="Operator" char="&amp;" char1="&amp;" />
+                <Detect2Chars attribute="Operator" char="|" char1="|" />
+                <Detect2Chars attribute="Operator" char="+" char1="=" />
+                <Detect2Chars attribute="Operator" char="&lt;" char1="&gt;" />
+                <Detect2Chars attribute="Operator" char="-" char1="&gt;" />
+                <AnyChar attribute="Operator" String="~:+-!^*/%&gt;&lt;=;," />
+            </context>
+
+            <!-- FindKeywords -->
+            <context attribute="Normal Text" lineEndContext="#stay" name="FindKeywords">
+                <!-- Keyword _ for anonymous functions _() -> -->
+                <RegExpr attribute="Keyword" String="_(?=\s*\()" />
+                <keyword attribute="ControlFlow" String="controlflow" />
+                <keyword attribute="Keyword" String="keywords" />
+                <keyword attribute="Import" String="import" />
+                <keyword attribute="Constant" String="constants" />
+                <keyword attribute="Variable" String="pseudo_variables" />
+                <keyword attribute="Built-in Event" String="events" />
+                <keyword attribute="Deprecated Built-in Event" String="deprecated_events" />
+            </context>
+
+            <!-- FindFunctions -->
+            <context attribute="Normal Text" lineEndContext="#stay" name="FindFunctions">
+                <RegExpr context="MatchFunction" String="&identifier;(?=\s*\()" lookAhead="true" />
+            </context>
+
+            <context attribute="Normal Text" lineEndContext="#stay" name="MatchFunction">
+                <keyword context="#pop" attribute="Built-in" String="builtins" />
+                <keyword context="#pop" attribute="Built-in" String="minecraft_builtins" />
+                <keyword context="#pop" attribute="Deprecated Built-in" String="deprecated_builtins" />
+                <RegExpr context="#pop" attribute="Function" String="&identifier;(?=\s*\()" />
+            </context>
+
+            <!-- FindGlobals -->
+            <context attribute="Normal Text" lineEndContext="#stay" name="FindGlobals">
+                <RegExpr attribute="Variable" String="&globalvar;" />
+            </context>
+
+            <!-- FindNumbers -->
+            <context attribute="Normal Text" lineEndContext="#stay" name="FindNumbers">
+                <!-- TODO: check if the builtin numeric matchers in Kate are correct -->
+                <RegExpr attribute="Float" String="[0-9]+[eE][-+]?[0-9]+" />
+                <Float attribute="Float" />
+                <HlCHex attribute="Hex" />
+                <Int attribute="Decimal" />
+            </context>
+
+            <!-- Strings -->
+            <context attribute="Normal Text" lineEndContext="#stay" name="FindStrings">
+                <DetectChar attribute="String" context="String" char="'" />
+            </context>
+            <context attribute="String" lineEndContext="#stay" name="String">
+                <!-- TODO: check if the builtin escape method in Kate is correct -->
+                <HlCStringChar attribute="Special Char" />
+                <!-- Also print sequences like %s %d etc... -->
+                <RegExpr attribute="Special Char" String="%([%doxbs]|&lt;\?&gt;|(\.[0-9]+)?[aefg])" />
+                <!-- TODO: highlight format() strings -->
+                <DetectChar attribute="String" context="#pop" char="'" />
+            </context>
+
+            <context attribute="Normal Text" lineEndContext="#stay" name="List">
+                <DetectChar context="#pop" char="]" endRegion="List" />
+                <IncludeRules context="Normal" />
+            </context>
+
+            <context attribute="Normal Text" lineEndContext="#stay" name="Map">
+                <DetectChar context="#pop" char="}" endRegion="Map" />
+                <IncludeRules context="Normal" />
+            </context>
+
+            <context attribute="Normal Text" lineEndContext="#stay" name="Block">
+                <DetectChar context="#pop" char=")" endRegion="Block" />
+                <IncludeRules context="Normal" />
+            </context>
+        </contexts>
+        <itemDatas>
+            <!-- Default Styles list at https://kate-editor.org/2014/03/07/kate-part-kf5-new-default-styles-for-better-color-schemes/ -->
+            <itemData name="Normal Text" defStyleNum="dsNormal"  spellChecking="false" />
+
+            <itemData name="Operator" defStyleNum="dsOperator" spellChecking="false" />
+            <itemData name="ControlFlow" defStyleNum="dsControlFlow" spellChecking="false" />
+            <itemData name="Keyword" defStyleNum="dsKeyword" spellChecking="false" />
+            <itemData name="Import" defStyleNum="dsImport" spellChecking="false" />
+            <itemData name="Constant" defStyleNum="dsConstant" spellChecking="false" />
+            <itemData name="Built-in" defStyleNum="dsBuiltIn" spellChecking="false" />
+            <itemData name="Built-in Event" defStyleNum="dsOthers" spellChecking="false" />
+            <!-- Show deprecated items striked out -->
+            <itemData name="Deprecated Built-in" defStyleNum="dsBuiltIn" strikeOut="true" spellChecking="false" />
+            <itemData name="Deprecated Built-in Event" defStyleNum="dsOthers" strikeOut="true" spellChecking="false" />
+
+            <itemData name="Variable" defStyleNum="dsVariable" spellChecking="false" />
+            <itemData name="Function" defStyleNum="dsFunction" spellChecking="false" />
+
+            <itemData name="Decimal" defStyleNum="dsDecVal" spellChecking="false" />
+            <itemData name="Hex" defStyleNum="dsBaseN" spellChecking="false" />
+            <itemData name="Float" defStyleNum="dsFloat" spellChecking="false" />
+
+            <itemData name="Special Char" defStyleNum="dsSpecialChar" spellChecking="false" />
+            <itemData name="String" defStyleNum="dsString" />
+
+            <itemData name="Comment" defStyleNum="dsComment" />
+        </itemDatas>
+    </highlighting>
+    <general>
+        <comments>
+            <comment name="singleLine" start="//" position="afterwhitespace"/>
+        </comments>
+        <keywords casesensitive="true" />
+    </general>
+</language>
