@@ -6,6 +6,17 @@ Kate is an open source, cross platform, versatile text editor made by KDE.
 
 Scarpet is a scripting language for Minecraft supported by Gnembon's [Carpet Mod](https://github.com/gnembon/fabric-carpet).
 
+## Features
+
+- Any complete theme is compatible as all styles used are default styles.
+- Syntax highlighting: comments, control flow, keywords, operators, constants, function calls and definitions, global variables and strings
+- Code folding for maps `{}`, lists `[]` and blocks `()`
+- Minecraft API highlighting
+- Minecraft Event API highlighting
+- Deprecated APIs are ~~strikethrough~~
+- Autocompletion for keywords and built-in functions
+- Partial support for printf-like sequences in strings (e.g. `'%s %d %.2f'`)
+
 ## Screenshots
 
 ![Github Dark Theme Screenshot](./screenshot/github_dark.png "Github Dark Theme Screenshot")
