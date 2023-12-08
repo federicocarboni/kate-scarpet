@@ -1,6 +1,6 @@
 # Scarpet for Kate (KSyntaxHighlighting)
 
-Full Syntax Highlighting support for Scarpet in [Kate](https://kate-editor.org/) through KSyntaxHighlighting.
+Full Syntax Highlighting support for Scarpet in [Kate](https://kate-editor.org/) through KSyntaxHighlighting with complete theming support.
 
 Kate is an open source, cross platform, versatile text editor made by KDE.
 
