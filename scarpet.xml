@@ -76,7 +76,7 @@
             <item>pi</item>
             <item>euler</item>
         </list>
-        <list name="pseudo_variables">
+        <list name="system_variables">
             <item>_</item>
             <item>_i</item>
             <item>_a</item>
@@ -464,7 +464,7 @@
                 <keyword attribute="Keyword" String="keywords" />
                 <keyword attribute="Import" String="import" />
                 <keyword attribute="Constant" String="constants" />
-                <keyword attribute="Variable" String="pseudo_variables" />
+                <keyword attribute="Variable" String="system_variables" />
                 <keyword attribute="Built-in Event" String="events" />
                 <keyword attribute="Deprecated Built-in Event" String="deprecated_events" />
             </context>
@@ -488,9 +488,10 @@
 
             <!-- FindNumbers -->
             <context attribute="Normal Text" lineEndContext="#stay" name="FindNumbers">
-                <!-- TODO: check if the builtin numeric matchers in Kate are correct -->
-                <RegExpr attribute="Float" String="[0-9]+[eE][-+]?[0-9]+" />
-                <Float attribute="Float" />
+                <!-- KSyntaxHighlighting's Float detector is not correct as it allows .123 syntax
+                     Scarpet only allows 0.123 -->
+                <RegExpr attribute="Float" String="(\b[0-9]+\.[0-9]*|[0-9]+)([eE][-+]?[0-9]+)?)" />
+                <RegExpr attribute="Error" String="\b\.[0-9]+" />
                 <HlCHex attribute="Hex" />
                 <Int attribute="Decimal" />
             </context>
@@ -500,11 +501,12 @@
                 <DetectChar attribute="String" context="String" char="'" />
             </context>
             <context attribute="String" lineEndContext="#stay" name="String">
-                <!-- TODO: check if the builtin escape method in Kate is correct -->
-                <HlCStringChar attribute="Special Char" />
+                <!-- HlCStringChar incorrectly highlights a lot more special character sequences
+                     that are not supported in Scarpet  -->
+                <RegExpr attribute="Special Char" String="\\[nt\\']" />
+                <RegExpr attribute="Error" String="\\." />
                 <!-- Also print sequences like %s %d etc... -->
                 <RegExpr attribute="Special Char" String="%([%doxbs]|&lt;\?&gt;|(\.[0-9]+)?[aefg])" />
-                <!-- TODO: highlight format() strings -->
                 <DetectChar attribute="String" context="#pop" char="'" />
             </context>
 
@@ -547,6 +549,8 @@
 
             <itemData name="Special Char" defStyleNum="dsSpecialChar" spellChecking="false" />
             <itemData name="String" defStyleNum="dsString" />
+
+            <itemData name="Error" defStyleNum="dsError" spellChecking="false" />
 
             <itemData name="Comment" defStyleNum="dsComment" />
         </itemDatas>
