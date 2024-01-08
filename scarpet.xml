@@ -490,7 +490,7 @@
             <context attribute="Normal Text" lineEndContext="#stay" name="FindNumbers">
                 <!-- KSyntaxHighlighting's Float detector is not correct as it allows .123 syntax
                      Scarpet only allows 0.123 -->
-                <RegExpr attribute="Float" String="(\b[0-9]+\.[0-9]*|[0-9]+)([eE][-+]?[0-9]+)?)" />
+                <RegExpr attribute="Float" String="(\b[0-9]+\.[0-9]*)|(\b[0-9]+)([eE][-+]?[0-9]+)?" />
                 <RegExpr attribute="Error" String="\b\.[0-9]+" />
                 <HlCHex attribute="Hex" />
                 <Int attribute="Decimal" />
