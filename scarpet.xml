@@ -9,9 +9,9 @@
 
     Full Scarpet syntax highlighting for KSyntaxHighlighting.
 
-    Last Update: 08 Dec. 2023 (Version 1)
+    Last Update: 08 Jan. 2024 (Version 2)
 -->
-<language name="Scarpet" version="1" kateversion="2.4" section="Scripts" extensions="*.sc;*.scl" author="Federico Carboni">
+<language name="Scarpet" version="2" kateversion="2.4" section="Scripts" extensions="*.sc;*.scl" author="Federico Carboni">
     <highlighting>
         <list name="controlflow">
             <item>if</item>
