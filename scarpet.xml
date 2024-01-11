@@ -9,9 +9,9 @@
 
     Full Scarpet syntax highlighting for KSyntaxHighlighting.
 
-    Last Update: 08 Jan. 2024 (Version 2)
+    Last Update: 11 Jan. 2024 (Version 3)
 -->
-<language name="Scarpet" version="2" kateversion="2.4" section="Scripts" extensions="*.sc;*.scl" author="Federico Carboni">
+<language name="Scarpet" version="3" kateversion="2.4" section="Scripts" extensions="*.sc;*.scl" author="Federico Carboni">
     <highlighting>
         <list name="controlflow">
             <item>if</item>
@@ -488,11 +488,11 @@
 
             <!-- FindNumbers -->
             <context attribute="Normal Text" lineEndContext="#stay" name="FindNumbers">
+                <HlCHex attribute="Hex" />
                 <!-- KSyntaxHighlighting's Float detector is not correct as it allows .123 syntax
                      Scarpet only allows 0.123 -->
                 <RegExpr attribute="Float" String="(\b[0-9]+\.[0-9]*)|(\b[0-9]+)([eE][-+]?[0-9]+)?" />
                 <RegExpr attribute="Error" String="\b\.[0-9]+" />
-                <HlCHex attribute="Hex" />
                 <Int attribute="Decimal" />
             </context>
 
