@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 3 11 Jan. 2024
+
+- Fix hexadecimal number literal highlighting
+
 ## Version 2 08 Jan. 2024
 
 - Fix decimal number highlighting
